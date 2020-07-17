@@ -13,3 +13,4 @@ rust:
 script:
   - cargo build --locked
   - cargo test --locked
+  - ls -la ./target/release/dssim
