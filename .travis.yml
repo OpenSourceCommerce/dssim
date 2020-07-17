@@ -13,6 +13,7 @@ rust:
 script:
   - cargo build --release
   - cargo test --locked
+  - pwd
   - ls -la /home/travis/build/nhatdo-nfq/dssim
   - ls -la /home/travis/build/nhatdo-nfq/dssim/target
   - ls -la /home/travis/build/nhatdo-nfq/dssim/target/release/dssim
