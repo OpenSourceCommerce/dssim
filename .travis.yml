@@ -13,4 +13,4 @@ rust:
 script:
   - cargo build --locked
   - cargo test --locked
-  - ls -la /home/travis/build/nhatdo-nfq/dssim
+  - ls -la /home/travis/build/nhatdo-nfq/dssim/target/release/dssim
