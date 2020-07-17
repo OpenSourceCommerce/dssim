@@ -19,9 +19,9 @@ script:
 
 deploy:
     provider: releases
-    tag_name: $TRAVIS_BUILD_NUMBER
+    tag_name: $TRAVIS_TAG
     target_commitish: $TRAVIS_COMMIT
-    name: $TRAVIS_BUILD_NUMBER
+    name: $TRAVIS_TAG
     overwrite: true
     skip_cleanup: true
     api_key: $github_token
@@ -30,4 +30,4 @@ deploy:
         - $TRAVIS_BUILD_DIR/nhatdo-nfq/dssim/linux-dssim
         - $TRAVIS_BUILD_DIR/nhatdo-nfq/dssim/osx-dssim
     on:
-        all_branches: true
+        tags: true
