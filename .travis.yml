@@ -11,7 +11,24 @@ rust:
     - nightly
 
 script:
+    - EXPORT
     - cargo build --release
     - cargo test --locked
     - pwd
-    - ls -la ./target/release/dssim
+    - ls -la $HOME/target/release/dssim
+    - cp ./target/release/dssim ./$TRAVIS_OS_NAME-dssim
+
+deploy:
+    provider: releases
+    tag_name: $TRAVIS_BUILD_NUMBER
+    target_commitish: $TRAVIS_COMMIT
+    name: $TRAVIS_BUILD_NUMBER
+    overwrite: true
+    skip_cleanup: true
+    api_key: $github_token
+    file_glob: true
+    file:
+        - $HOME/linux-dssim
+        - $HOME/osx-dssim
+    on:
+        tags: true
