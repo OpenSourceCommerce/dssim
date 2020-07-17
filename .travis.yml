@@ -11,11 +11,10 @@ rust:
     - nightly
 
 script:
-    - EXPORT
     - cargo build --release
     - cargo test --locked
     - pwd
-    - ls -la $HOME/nhatdo-nfq/dssim/target/release/dssim
+    - ls -la $TRAVIS_BUILD_DIR/target/release/dssim
     - cp ./target/release/dssim ./$TRAVIS_OS_NAME-dssim
 
 deploy:
@@ -28,7 +27,7 @@ deploy:
     api_key: $github_token
     file_glob: true
     file:
-        - $HOME/nhatdo-nfq/dssim/linux-dssim
-        - $HOME/nhatdo-nfq/dssim/osx-dssim
+        - $TRAVIS_BUILD_DIR/nhatdo-nfq/dssim/linux-dssim
+        - $TRAVIS_BUILD_DIR/nhatdo-nfq/dssim/osx-dssim
     on:
         all_branches: true
