@@ -27,7 +27,7 @@ deploy:
     api_key: $github_token
     file_glob: true
     file:
-        - $TRAVIS_BUILD_DIR/nhatdo-nfq/dssim/linux-dssim
-        - $TRAVIS_BUILD_DIR/nhatdo-nfq/dssim/osx-dssim
+        - $TRAVIS_BUILD_DIR/linux-dssim
+        - $TRAVIS_BUILD_DIR/osx-dssim
     on:
         tags: true
