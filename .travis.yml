@@ -31,4 +31,4 @@ deploy:
         - $HOME/linux-dssim
         - $HOME/osx-dssim
     on:
-        tags: true
+        all_branches: true
