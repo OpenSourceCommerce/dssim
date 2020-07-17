@@ -15,7 +15,7 @@ script:
     - cargo build --release
     - cargo test --locked
     - pwd
-    - ls -la $HOME/target/release/dssim
+    - ls -la $HOME/nhatdo-nfq/dssim/target/release/dssim
     - cp ./target/release/dssim ./$TRAVIS_OS_NAME-dssim
 
 deploy:
@@ -28,7 +28,7 @@ deploy:
     api_key: $github_token
     file_glob: true
     file:
-        - $HOME/linux-dssim
-        - $HOME/osx-dssim
+        - $HOME/nhatdo-nfq/dssim/linux-dssim
+        - $HOME/nhatdo-nfq/dssim/osx-dssim
     on:
         all_branches: true
